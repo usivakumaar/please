@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Object Detection Camera Example</title>
+  <title>Object Detections Camera Example</title>
 
 </head>
 
 <body>
-  <h2>Object Detection Camera Example</h2>
+  <h2>Object Detections Camera Example</h2>
   <p class="err" id="errorMessage"></p>
   <video id="videoInput" width=320 height=240 autoplay style="position: absolute;"></video>
   <canvas id="canvasOutput" width=320 height=240 style="z-index: 99999;position: absolute;"></canvas>
@@ -58,7 +58,7 @@
       startAndStop.innerText = 'Start';
     }
 
-    const FPS = 30;
+    const FPS = 60;
     function processVideo() {
       try {
         
