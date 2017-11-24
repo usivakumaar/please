@@ -10,8 +10,8 @@
 <body>
   
   <p class="err" id="errorMessage"></p>
-  <video id="videoInput" width="320px" height="240px" autoplay style="height:100% !important;width:100% !important;object-fit:cover;position:absolute"></video>
-  <canvas id="canvasOutput" width="320px" height="240px" style="height:100% !important;width:100% !important;position:absolute;z-index:2222"></canvas>
+  <video id="videoInput" width="320px" height="240px" autoplay style="height:600px !important;width:100% !important;object-fit:cover;position:absolute"></video>
+  <canvas id="canvasOutput" width="320px" height="240px" style="height:600px !important;width:100% !important;position:absolute;z-index:2222"></canvas>
   <script>
     var errorCallback = function (e) {
       console.log('Reeeejected!', e);
@@ -93,7 +93,7 @@
         //ctx.rect(points1,points2,150,100);
         //ctx.stroke();
         ctx.beginPath(); //
-        ctx.rect(points1,points2,width,200);
+        ctx.rect(points1,points2,width,height);
         ctx.stroke();
         ctx.closePath();
 
