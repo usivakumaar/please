@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Object Detection Camera Example</title>
+  <title>Object Detections Camera Example</title>
 
 </head>
 
 <body>
   
   <p class="err" id="errorMessage"></p>
-  <video id="videoInput" width="320px" height="240px" autoplay style="height:600px !important;width:100% !important;object-fit:cover;position:absolute"></video>
+  <video id="videoInput" width="320px" height="240px" autoplay playsinline style="height:600px !important;width:100% !important;object-fit:cover;position:absolute"></video>
   <canvas id="canvasOutput" width="320px" height="240px" style="height:600px !important;width:100% !important;position:absolute;z-index:2222"></canvas>
   <script>
     var errorCallback = function (e) {
