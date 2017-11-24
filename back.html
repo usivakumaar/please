@@ -3,15 +3,15 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Object Detections Camera Example</title>
+  <title>Object Detection Camera Example</title>
 
 </head>
 
 <body>
-  <h2>Object Detections Camera Example</h2>
+  
   <p class="err" id="errorMessage"></p>
-  <video id="videoInput" width=320 height=240 autoplay style="object-fit:cover;width:100% !important"></video>
-  <canvas id="canvasOutput" width=320 height=240 ></canvas>
+  <video id="videoInput" width="320px" height="240px" autoplay style="height:auto !important;width:100% !important;object-fit:cover;position:absolute"></video>
+  <canvas id="canvasOutput" width="320px" height="240px" style="height:auto !important;width:100% !important;position:absolute;z-index:2222"></canvas>
   <script>
     var errorCallback = function (e) {
       console.log('Reeeejected!', e);
@@ -21,7 +21,7 @@
     navigator.getUserMedia({ video: { facingMode: 'environment' }, audio: false }, function (localMediaStream) {
       var video = document.querySelector('video');
       video.src = window.URL.createObjectURL(localMediaStream);
-
+      //video.style.width = "420px";
       // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
       // See crbug.com/110938.
       video.onloadedmetadata = function (e) {
@@ -62,7 +62,7 @@
     function processVideo() {
       try {
         
-        var ctx=c.getContext("2d");
+        
         let begin = Date.now();
         // start processing.
         cap.read(src);
@@ -73,21 +73,31 @@
         // draw faces.
         ctx.clearRect(0, 0, c.width, c.height);
         //ctx.clearRect(0, 0, c.width, c.height);
-        //ctx.stroke();
+        ctx.stroke();
+        var points1,points2,height,width;
         for (let i = 0; i < faces.size(); ++i) {
           
           console.log(faces.get(i));
           let face = faces.get(i);
-          let point1 = new cv.Point(face.x, face.y);
-          let point2 = new cv.Point(face.x + face.width, face.y + face.height);
-          //cv.circle(dst,(point1,point2), 63, (0,0,255), -1);
-          cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
+          // let point1 = new cv.Point(face.x, face.y);
+          // let point2 = new cv.Point(face.x + face.width, face.y + face.height);
+          // //cv.circle(dst,(point1,point2), 63, (0,0,255), -1);
+          //cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
           //ctx.rect(face.x,face.y,150,100);
           //ctx.stroke();
-          
+          points1 = face.x;
+          points2 = face.y;
+          height = face.height;
+          width = face.width;
         }
-        
-        cv.imshow('canvasOutput', dst);
+        //ctx.rect(points1,points2,150,100);
+        //ctx.stroke();
+        ctx.beginPath(); //
+        ctx.rect(points1,points2,width,height);
+        ctx.stroke();
+        ctx.closePath();
+
+        //cv.imshow('canvasOutput', dst);
         // schedule the next one.
         let delay = 1000 / FPS - (Date.now() - begin);
         setTimeout(processVideo, delay);
@@ -108,7 +118,7 @@
         console.log(video);
         
         c=document.getElementById("canvasOutput");
-        
+        ctx=c.getContext("2d");
         src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
         dst = new cv.Mat(video.height, video.width, cv.CV_8UC4);
         gray = new cv.Mat();
