@@ -149,8 +149,8 @@ let utils = new Utils('errorMessage');
     if (elem && elem.getContext) {
 
       // list of rectangles to render
-      rects1 = [{ x: 0, y: 0, w: 150, h: 150 }];
-      rects2 = [{ x: 0, y: 0, w: 150, h: 150 }];
+      rects1 = [];
+      rects2 = [];
       // get context
       var context = elem.getContext('2d');
       

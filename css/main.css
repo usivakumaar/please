@@ -16,6 +16,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	font-family: inherit;
 	vertical-align: baseline;
 }
+video{
+	height: 400px;
+	width: 400px;
+}
 
 a img, :link img, :visited img {
 	border: 0;
@@ -94,7 +98,7 @@ a img, :link img, :visited img {
 }
 
 .info-video {
-	margin-bottom: 15px;
+	margin-bottom: 105px;
 }
 .icon-video-img {
 	display: inline;
