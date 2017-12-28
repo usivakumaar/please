@@ -39,6 +39,11 @@ a img, :link img, :visited img {
     margin-right: 0px !important;
     margin-left: 0px !important;
 }
+
+#myModal{
+	margin-top : 1200px !important;
+}
+
 @media screen and (min-width: 1100px) {
 	.container-fluid {
 		height: auto;
@@ -55,7 +60,7 @@ a img, :link img, :visited img {
 	/*margin-top : 250px !important;*/
 	}
 	#myModal{
-	margin-top : 250px !important;
+	margin-top : 650px !important;
 	}
 
 	.opencv_tag{
