@@ -17,6 +17,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	vertical-align: baseline;
 }
 
+.opencv_tag{
+	margin-top: 400px;
+}
+
+
 a img, :link img, :visited img {
 	border: 0;
 }
@@ -51,6 +56,10 @@ a img, :link img, :visited img {
 	}
 	#myModal{
 	margin-top : 250px !important;
+	}
+
+	.opencv_tag{
+		margin-top: 100px;
 	}
 }
 
