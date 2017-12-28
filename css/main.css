@@ -16,10 +16,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	font-family: inherit;
 	vertical-align: baseline;
 }
-video, canvas{
-	height: 400px;
-	width: 800px;
-}
 
 a img, :link img, :visited img {
 	border: 0;

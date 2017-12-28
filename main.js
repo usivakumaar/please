@@ -80,12 +80,13 @@ let utils = new Utils('errorMessage');
 
     // schedule the first one.
     function demo(value) {
-      alert(value+" details");
+      //alert(value+" details");
       //var innerdiv = document.getElementById('canvasOutputdiv');
       //innerdiv.innerHTML = "";
-      // document.getElementById("details").innerText = 
+      document.getElementById("myModal").style.display = "block"; 
       // var modal = document.getElementById('myModal');
       // modal.style.display = "block";
+      
     }
     function close() {
       var modal = document.getElementById('myModal');
